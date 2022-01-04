@@ -11,8 +11,12 @@
 }
 
 .header__menu .menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-top: 1px solid #eaeaeb;
   border-bottom: 1px solid #eaeaeb;
   margin-left: auto;
@@ -45,5 +49,4 @@
 .header__menu .menu__list .menu__links .menu__link:hover {
   color: #A050BE;
 }
-
 /*# sourceMappingURL=style.css.map */
