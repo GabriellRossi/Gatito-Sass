@@ -1,8 +1,10 @@
 /// Estas variaveis se refere as cores principais do nosso blog
-$purple: #A050BE;
+$purple: #a050be;
 $light-grey: #eaeaeb;
 $dark-grey: #464646;
-$yellow: #FABE50;
+$yellow: #fabe50;
+$img-width: 45%;
+
 
 .header {
     font-family: Arial, Helvetica, sans-serif;
@@ -42,7 +44,7 @@ $yellow: #FABE50;
                 background-color: $light-grey;
             }
         }
-        
+
         &__link {
             padding: 0 25px;
             color: $dark-grey;
@@ -54,14 +56,12 @@ $yellow: #FABE50;
     }
 }
 
-
 /*Este trecho de estilo se refere 
 ao rodapé do nosso blog*/
 .footer {
     text-align: center;
     padding: 20px 0;
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
     bottom: 0;
     left: 50%;
     transform: translateX(-50px);
@@ -124,7 +124,7 @@ ao rodapé do nosso blog*/
         border: 1px solid $purple;
         margin: 0 10px;
     }
-    
+
     &__details {
         border: 1px solid $light-grey;
     }
@@ -148,7 +148,7 @@ ao rodapé do nosso blog*/
         color: $purple;
         background-color: $yellow;
         padding: 10px 20px;
-        transition: .3s;
+        transition: 0.3s;
         &:hover {
             color: $yellow;
             background-color: $purple;
@@ -185,9 +185,86 @@ ao rodapé do nosso blog*/
         color: $dark-grey;
         margin-top: 10px;
         margin-bottom: 10px;
-        
-        &:hover{
+
+        &:hover {
             color: $purple;
         }
+    }
+}
+
+.about {
+    width: 80%;
+    margin: 0 auto 40px;
+
+    &__title {
+        border-color: $light-grey;
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 22px;
+        color: $dark-grey;
+        letter-spacing: 1px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .breadcrumb {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        &__link {
+            font-size: 12px;
+            text-decoration: none;
+            color: $dark-grey;
+            &:hover {
+                text-decoration: underline;
+                color: $purple;
+            }
+        }
+
+        &__img {
+            width: 10px;
+            margin: 1px 5px 0 5px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__intro {
+        font-weight: 100;
+        color: $dark-grey;
+        width: 70%;
+        margin: 30px auto;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    &__split {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__img2 {
+        width: $img-width;
+    }
+
+    &__txt {
+        width: calc(100% - #{$img-width});
+    }
+
+    &__p {
+        font-size: 14px;
+        padding: 10px 20px;
+        color: $dark-grey;
     }
 }

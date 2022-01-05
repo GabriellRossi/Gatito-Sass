@@ -37,7 +37,7 @@
   color: #464646;
 }
 .header .menu__link:hover {
-  color: #A050BE;
+  color: #a050be;
 }
 
 /*Este trecho de estilo se refere 
@@ -46,7 +46,6 @@ ao rodapé do nosso blog*/
   text-align: center;
   padding: 20px 0;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
   bottom: 0;
   left: 50%;
   transform: translateX(-50px);
@@ -82,7 +81,7 @@ ao rodapé do nosso blog*/
   letter-spacing: 1.5;
 }
 .main__title:hover {
-  color: #A050BE;
+  color: #a050be;
 }
 .main__subtitle {
   display: flex;
@@ -99,8 +98,8 @@ ao rodapé do nosso blog*/
 .main__tag {
   font-size: 14px;
   padding: 5px 7px;
-  color: #A050BE;
-  border: 1px solid #A050BE;
+  color: #a050be;
+  border: 1px solid #a050be;
   margin: 0 10px;
 }
 .main__details {
@@ -120,14 +119,14 @@ ao rodapé do nosso blog*/
   text-decoration: none;
   font-size: 16px;
   letter-spacing: 1.5;
-  color: #A050BE;
-  background-color: #FABE50;
+  color: #a050be;
+  background-color: #fabe50;
   padding: 10px 20px;
   transition: 0.3s;
 }
 .main__btn:hover {
-  color: #FABE50;
-  background-color: #A050BE;
+  color: #fabe50;
+  background-color: #a050be;
 }
 .main__info {
   display: flex;
@@ -157,7 +156,73 @@ ao rodapé do nosso blog*/
   margin-bottom: 10px;
 }
 .main__a:hover {
-  color: #A050BE;
+  color: #a050be;
+}
+
+.about {
+  width: 80%;
+  margin: 0 auto 40px;
+}
+.about__title {
+  border-color: #eaeaeb;
+  text-align: center;
+  padding: 20px;
+}
+.about__h1 {
+  font-size: 22px;
+  color: #464646;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.about .breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.about .breadcrumb__link {
+  font-size: 12px;
+  text-decoration: none;
+  color: #464646;
+}
+.about .breadcrumb__link:hover {
+  text-decoration: underline;
+  color: #a050be;
+}
+.about .breadcrumb__img {
+  width: 10px;
+  margin: 1px 5px 0 5px;
+}
+.about__img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.about__intro {
+  font-weight: 100;
+  color: #464646;
+  width: 70%;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 16px;
+}
+.about__split {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.about__img2 {
+  width: 45%;
+}
+.about__txt {
+  width: calc(100% - 45%);
+}
+.about__p {
+  font-size: 14px;
+  padding: 10px 20px;
+  color: #464646;
 }
 
 /*# sourceMappingURL=style.css.map */
