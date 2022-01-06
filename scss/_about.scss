@@ -7,7 +7,7 @@
     font-family: Arial;
 
     &__title {
-        border-color: $light-grey;
+        background-color: $light-grey;
         text-align: center;
         padding: 20px;
     }
@@ -16,10 +16,7 @@
         @include fontSize(22px);
         color: $dark-grey;
         letter-spacing: 1px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        margin-left: 0;
-        margin-right: 0;
+        @extend %half-margin-top, %default-margin-bottom, %no-margin-left;
     }
 
     .breadcrumb {
@@ -44,7 +41,7 @@
 
     &__img {
         width: 100%;
-        margin-bottom: 20px;
+        @extend %double-margin-bottom;
     }
 
     &__intro {
@@ -63,8 +60,7 @@
     }
 
     &__split {
-        display: flex;
-        justify-content: center;
+        @include flx(justify-content, center);
         flex-wrap: wrap;
         align-items: center;
     }
