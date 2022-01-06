@@ -19,6 +19,26 @@ $img-width: 45%;
     #{$property}: $jty-cnt;
 }
 
+@mixin for-phone-only {
+    @media (max-width: 767.98) { @content; }
+}
+
+@mixin for-tablet-only {
+    @media (min-width: 768px) and (max-width: 1199.98) { @content; }
+}
+
+@mixin for-desktop-only {
+    @media (min-width: 1200px) { @content; }
+}
+
+@function calculateRem($size) {
+    @return $size / 16px * 1rem;
+}
+
+@mixin  fontSize($size) {
+    font-size: calculateRem($size);
+}
+
 .header {
     font-family: Arial, Helvetica, sans-serif;
 
@@ -38,12 +58,26 @@ $img-width: 45%;
             border-bottom: 1px solid $light-grey;
             margin-left: auto;
             margin-right: auto;
-            width: 80%;
-            padding: 20px 0;
+            @include for-phone-only {
+                width: 90%;
+                padding: 15px 0;
+                flex-wrap: wrap;
+            }
+            @include for-tablet-only {
+                width: 80%;
+                padding: 20px 0;
+            }
+            @include for-desktop-only {
+                width: 80%;
+                padding: 20px 0;
+            }
         }
 
         &links {
             position: relative;
+            @include for-phone-only {
+                padding: 5px 0;
+            }
 
             &:not(:last-child)::after {
                 content: "";
@@ -85,7 +119,7 @@ ao rodapé do nosso blog*/
 
     &__txt {
         margin: auto;
-        font-size: 14px;
+        @include fontSize(14px);
     }
 }
 .main {
@@ -95,6 +129,9 @@ ao rodapé do nosso blog*/
     font-family: Arial, Helvetica, sans-serif;
 
     &__content {
+        @include for-phone-only {
+            width: 100%;
+        }
         width: 70%;
         padding: 40px 8px;
     }
@@ -108,7 +145,7 @@ ao rodapé do nosso blog*/
 
     &__title {
         text-decoration: none;
-        font-size: 22px;
+        @include fontSize(22px);
         color: $dark-grey;
         letter-spacing: 1.5;
         &:hover {
@@ -126,12 +163,12 @@ ao rodapé do nosso blog*/
 
     &__date {
         margin: 0 10px;
-        font-size: 12px;
+        @include fontSize(12px);
         font-style: italic;
     }
 
     &__tag {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 5px 7px;
         color: $purple;
         border: 1px solid $purple;
@@ -151,12 +188,12 @@ ao rodapé do nosso blog*/
         max-width: 650px;
         margin-left: auto;
         margin-right: auto;
-        font-size: 14px;
+        @include fontSize(14px);
     }
 
     &__btn {
         text-decoration: none;
-        font-size: 16px;
+        @include fontSize(16px);
         letter-spacing: 1.5;
         color: $purple;
         background-color: $yellow;
@@ -182,7 +219,7 @@ ao rodapé do nosso blog*/
     }
 
     &__p {
-        font-size: 14px;
+        @include fontSize(14px);
         color: $dark-grey;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -194,7 +231,7 @@ ao rodapé do nosso blog*/
 
     &__a {
         text-decoration: none;
-        font-size: 14px;
+        @include fontSize(14px);
         color: $dark-grey;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -248,7 +285,7 @@ ao rodapé do nosso blog*/
         }
 
         &__post-title {
-            font-size: 14px;
+            @include fontSize(14px);
             color: $purple;
             @extend %no-decotation;
 
@@ -258,15 +295,19 @@ ao rodapé do nosso blog*/
         }
 
         &__post-date {
-            font-size: 12px;
+            @include fontSize(12px);
             margin: 5px 0 0 0;
         }
     }
 }
 
 .about {
+    @include for-phone-only {
+        width: 90%;
+    }
     width: 80%;
     margin: 0 auto 40px;
+    font-family: Arial;
 
     &__title {
         border-color: $light-grey;
@@ -275,7 +316,7 @@ ao rodapé do nosso blog*/
     }
 
     &__h1 {
-        font-size: 22px;
+        @include fontSize(22px);
         color: $dark-grey;
         letter-spacing: 1px;
         margin-top: 5px;
@@ -285,12 +326,11 @@ ao rodapé do nosso blog*/
     }
 
     .breadcrumb {
-        display: flex;
-        justify-content: center;
+        @include flx(justify-content, center);
         align-content: center;
 
         &__link {
-            font-size: 12px;
+            @include fontSize(12px);
             text-decoration: none;
             color: $dark-grey;
             &:hover {
@@ -316,7 +356,13 @@ ao rodapé do nosso blog*/
         width: 70%;
         margin: 30px auto;
         text-align: center;
-        font-size: 16px;
+        @include fontSize(16px);
+        @include for-phone-only {
+            width: 90%;
+        }
+        @include for-tablet-only {
+            width: 80%;
+        }
     }
 
     &__split {
@@ -328,20 +374,30 @@ ao rodapé do nosso blog*/
 
     &__img-description {
         width: $img-width;
+        @include for-phone-only {
+            width: 80%;
+        }
     }
 
     &__txt {
         width: calc(100% - #{$img-width});
+        @include for-phone-only {
+            width: 90%;
+            text-align: center;
+        }
     }
 
     &__p {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 10px 20px;
         color: $dark-grey;
     }
 }
 
 .article {
+    @include for-phone-only {
+        width: 90%;
+    }
     width: 80%;
     margin: 0 auto 40px;
     font-family: Arial, Helvetica, sans-serif;
@@ -353,7 +409,7 @@ ao rodapé do nosso blog*/
     }
 
     &__h1 {
-        font-size: 22px;
+        @include fontSize(22px);
         color: $dark-grey;
         letter-spacing: 1px;
         margin-top: 5px;
@@ -366,7 +422,7 @@ ao rodapé do nosso blog*/
         @include flx(justify-content, center);
         align-items: center;
         &__link {
-            font-size: 12px;
+            @include fontSize(12px);
             @extend %no-decotation;
             color: $dark-grey;
 
@@ -394,12 +450,12 @@ ao rodapé do nosso blog*/
 
     &__date {
         margin: 0 10px;
-        font-size: 12px;
+        @include fontSize(12px);
         font-style: italic;
     }
 
     &__tag {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 5px 7px;
         color: $purple;
         border: 1px solid $purple;
@@ -408,7 +464,7 @@ ao rodapé do nosso blog*/
 
     &__content {
         font-weight: 100;
-        font-size: 14px;
+        @include fontSize(14px);
         color: $dark-grey;
         padding: 10px 20px;
     }
